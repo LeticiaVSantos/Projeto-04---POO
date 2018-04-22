@@ -18,6 +18,14 @@
       font-weight: 400;
       margin-bottom: 30px;
   }  
+  p {
+      font-size: 17px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+      
+  }
   .jumbotron {
       background-color: #12285A;
       color: #fff;
@@ -71,11 +79,7 @@
   .panel:hover {
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
-  .panel-footer .btn:hover {
-      border: 1px solid #12285A;
-      background-color: #fff !important;
-      color: #12285A;
-  }
+  
   .panel-heading {
       color: #fff !important;
       background-color: #12285A !important;
@@ -86,29 +90,19 @@
       border-bottom-left-radius: 0px;
       border-bottom-right-radius: 0px;
   }
-  .panel-footer {
-      background-color: white !important;
-  }
-  .panel-footer h3 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 32px;
-  }
-  .panel-footer h4 {
-      color: #aaa;
-      font-family: 'Raleway', sans-serif;
-      font-size: 14px;
-  }
+ 
   .panel-footer .btn {
       margin: 15px 0;
       background-color: #12285A;
       color: #fff;
   }
   .navbar {
+     
       margin-bottom: 0;
       background-color: #12285A;
       z-index: 9999;
       border: 0;
-      font-size: 12px !important;
+      font-size: 15px !important;
       line-height: 1.42857143 !important;
       letter-spacing: 4px;
       border-radius: 0;

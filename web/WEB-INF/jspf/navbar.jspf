@@ -1,0 +1,26 @@
+<%@ page pageEncoding="UTF-8" %>
+
+ <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="home.jsp">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="home.jsp">Register</a>
+    </div>
+      
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          
+        <li><a href="Clientes.jsp">Cadastro de Clientes</a></li>
+        <li><a href="Fornecedores.jsp">Cadastro de Fornecedores</a></li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
