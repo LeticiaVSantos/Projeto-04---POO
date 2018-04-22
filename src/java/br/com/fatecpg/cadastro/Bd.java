@@ -10,9 +10,7 @@ public class Bd {
 
     public static ArrayList<Clientes> getClientes() {
         return clientes;
-    }
-    
-
+    } 
 
 private static ArrayList<Fornecedores> fornecedores = new ArrayList<> ();
 
