@@ -23,7 +23,11 @@
 <html>
     
     <head>
+        
         <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
+        
+        <!--favicon-->
+        <link rel="icon" href="Imagens/favicon.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
         <title>Cadastro Fornecedores</title>
@@ -41,13 +45,13 @@
                     <p class="card-text pbody">Entre com o índice e os demais dados solicitados abaixo para alterar um item da lista de fornecedores.</p>
                     <form action="fornecedores.jsp">
                         <table>
-                            <tr><td><input class="form-control" type="text" name="indice" placeholder="Índice"></td></tr>
-                            <tr><td><input class="form-control" type="text" name="nome_alt" placeholder="Nome da Empresa"></td></tr>
-                            <tr><td><input class="form-control" type="text" name="razao_alt" placeholder="Razão Social"></td></tr>
-                            <tr><td><input class="form-control" type="text" name="cnpj_alt" placeholder="CNPJ"></td></tr>
-                            <tr><td><input class="form-control" type="text" name="email_alt" placeholder="E-mail"></td></tr>
-                            <tr><td><input class="form-control" type="text" name="telefone_alt" placeholder="Telefone"></td></tr>
-                            <tr><td><input class="form-control" type="text" name="endereco_alt" placeholder="Endereço"></td></tr>
+                            <tr><td><input class="form-control" type="text" name="indice" placeholder="Índice"><br></td></tr>
+                            <tr><td><input class="form-control" type="text" name="nome_alt" placeholder="Nome da Empresa"><br></td></tr>
+                            <tr><td><input class="form-control" type="text" name="razao_alt" placeholder="Razão Social"><br></td></tr>
+                            <tr><td><input class="form-control" type="text" name="cnpj_alt" placeholder="CNPJ"><br></td></tr>
+                            <tr><td><input class="form-control" type="text" name="email_alt" placeholder="E-mail"><br></td></tr>
+                            <tr><td><input class="form-control" type="text" name="telefone_alt" placeholder="Telefone"><br></td></tr>
+                            <tr><td><input class="form-control" type="text" name="endereco_alt" placeholder="Endereço"><br></td></tr>
                         </table>
                         <br><input class="bttbody btn btn-primary" type="submit" name="alt" value="Alterar">
                         </form>

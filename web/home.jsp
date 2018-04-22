@@ -8,7 +8,7 @@
         <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
+        <title>Register - Home</title>
     </head>
    
     <%@include file="WEB-INF/jspf/navbar.jspf" %>
@@ -19,9 +19,9 @@
   
 </div>
   
-    <div class="container-fluid text-center">
-  <h2>PARA QUEM REGISTER FOI FEITO?</h2>
-  <h4><p>O Register foi criado para resolver problemas de cadastro</p> <p>e ajudar empreendedores, gestores e vendedores a serem mais eficientes nas vendas.</p></h4>
+  <center><div class="container-fluid bg-grey">
+  <h2>PARA QUEM O REGISTER FOI FEITO?</h2>
+  <h4><p>O Register foi criado para resolver problemas de cadastro e</p> <p> ajudar empreendedores, gestores e vendedores a serem mais eficientes nas vendas.</p></h4>
   <h4><p>Veja como:</p></h4>
   <br>
   <div class="row">
@@ -42,7 +42,7 @@
     </div>
     </div>
   
-    </div>    
+        </div> </center>  
     <!-- Container (Desenvolvedores) -->
 
 <div class="container-fluid text-center">

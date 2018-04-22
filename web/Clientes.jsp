@@ -37,12 +37,17 @@
     %>
 <html>
     <head>
-        <%@include file="WEB-INF/jspf/cabecalho.jspf" %>        
+        <%@include file="WEB-INF/jspf/cabecalho.jspf" %>       
+        
+        <!--favicon-->
+        <link rel="icon" href="Imagens/favicon.ico">
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Clientes</title>
     </head>
     <body>        
-    <%@include file="WEB-INF/jspf/navbar.jspf" %>        
+    <%@include file="WEB-INF/jspf/navbar.jspf" %>     
+    
     <center><div class="card-group">
             <div class="card">
                 <div class="card-body">
