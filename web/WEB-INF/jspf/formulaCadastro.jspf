@@ -1,0 +1,31 @@
+<%
+      if(request.getParameter("alt") != null){
+        int i = Integer.parseInt(request.getParameter("indice"));
+        Bd.getClientes().remove(i);
+
+        Clientes alterarClientes = new Clientes();
+        alterarClientes.setNome(request.getParameter("nome"));
+        alterarClientes.setCpf(request.getParameter("cpf"));
+        alterarClientes.setRg(request.getParameter("rg"));
+        alterarClientes.setEmail(request.getParameter("email"));
+        alterarClientes.setTelefone(request.getParameter("telefone"));
+        alterarClientes.setEndereco(request.getParameter("endereco"));
+        Bd.getClientes().add(i, alterarClientes);
+
+        response.sendRedirect(request.getRequestURI());
+    } else if (request.getParameter("del") != null) {
+        int i = Integer.parseInt(request.getParameter("i"));
+        Bd.getClientes().remove(i);
+        response.sendRedirect(request.getRequestURI());
+    } else if (request.getParameter("add") != null){
+        Clientes c = new Clientes();
+        c.setNome(request.getParameter("nome"));
+        c.setCpf(request.getParameter("cpf"));
+        c.setRg(request.getParameter("rg"));
+        c.setEmail(request.getParameter("email"));
+        c.setTelefone(request.getParameter("telefone"));
+        c.setEndereco(request.getParameter("endereco"));
+        Bd.getClientes().add(c);
+        response.sendRedirect(request.getRequestURI()); //Limpa a URL para não repetir a gravação dos mesmos dados.
+     }
+    %>
