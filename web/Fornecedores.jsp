@@ -1,7 +1,7 @@
 <%@page import="br.com.fatecpg.cadastro.Bd"%>
 <%@page import="br.com.fatecpg.cadastro.Fornecedores"%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,6 +15,8 @@
     </head>
     <body>
     <%@include file="WEB-INF/jspf/navbar.jspf" %>
+    
+    <!-- Título da página -->
      <div class="content-wrapper">
          <br><br><center><h1>Cadastro de Fornecedores</h1>
         <% 
@@ -63,7 +65,9 @@
             }catch(Exception ex){%>
             <div>O form está preenchido incorretamente</div>
         <%}%>
-  <div class="container">
+  
+        <!-- Formulário de cadastro do Fornecedor -->
+        <div class="container">
     <div class="card card-register mx-auto mt-5">
       <br><div class="card-header"><b>Registrar Fornecedor</b></div>
       <div class="card-body">
@@ -108,6 +112,8 @@
         
         <div class="card-header">
           <i class="fa fa-table"></i><b>Lista de Fornecedores</b></div><br>
+          
+          <!-- Tabela dos Fornecedores -->
             <table class="table table-bordered" width="100%" cellspacing="0">
               <thead>
  		<tr>
@@ -120,10 +126,11 @@
                   <th>Endereço</th>
                   <th>Exclusão</th>
                   <th>Alteração</th>
-       </tr>
+                </tr>
               </thead>
               <tbody>
                   
+        <!-- Se 'alterar' for igual a 'null' entra em um laço p/ a exibição dos cadastros -->
         <%if(request.getParameter("alterar") == null) {
         for (int i=0; i<Fornecedores.getList().size(); i++){%>
         <%Fornecedores c= Fornecedores.getList().get(i);
@@ -149,7 +156,9 @@
             </form> 
         </td>
         </tr>
-         <%}}
+        
+        <!-- Se 'alterar' for diferente de 'null' entra em um laço p/ a exibição dos cadastros que deseja alterar -->
+        <%}}
         else {
             for (int i=0; i<Fornecedores.getList().size(); i++){
               Fornecedores c = Fornecedores.getList().get(i);
@@ -176,6 +185,8 @@
                     </td>
                     </tr>
                     <%}else {%>
+                    
+                    <!-- Form do 'alterar' -->
                     <tr>
                         <form>
                         <td><%=i%></td>
