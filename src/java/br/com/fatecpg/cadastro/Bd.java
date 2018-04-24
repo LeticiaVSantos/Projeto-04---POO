@@ -9,6 +9,9 @@ public class Bd {
     private static ArrayList<Clientes> clientes = new ArrayList<> ();
 
     public static ArrayList<Clientes> getClientes() {
+        if(clientes == null){
+            clientes = new ArrayList<>();
+        }
         return clientes;
     } 
 

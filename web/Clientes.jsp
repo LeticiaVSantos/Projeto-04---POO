@@ -6,34 +6,37 @@
 <%@include file="WEB-INF/jspf/formulaCadastro.jspf" %> 
 <html>
     <head>
-        <%@include file="WEB-INF/jspf/cabecalho.jspf" %>        
+        <%@include file="WEB-INF/jspf/cabecalho.jspf" %>       
+        
+        <!--favicon-->
+        <link rel="icon" href="Imagens/favicon.ico">
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Clientes</title>
     </head>
     <body>        
-        <%@include file="WEB-INF/jspf/navbar.jspf" %>        
+        <%@include file="WEB-INF/jspf/navbar.jspf" %>
+<!-- TITULO E SUBTITULO DA PAGINA --> 
         <center>
             <div class="card-group">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title h5body">Cadastro de Clientes</h5>
-
                         <div class="card">    
                         <div class="card-body">
                             <br><h1 class="card-title h5body">O que deseja fazer?</h1>
-                            <p class="card-text pbody">Clique no menu do que deseja fazer e preencha os campos necessários para começar a utilizar o Register.</p>
+                            <p class="card-text pbody">Nessa pagina você consegue cadastrar, alterar e excluir o seu cliente.</p>
+<!-- FIM TITULO E SUBTITULO DA PAGINA -->
+<!-- FORMULARIO DE CADASTRO DO CLIENTE -->
                             <div class="tab">
-                                <button class="tablinks" onclick="openCity(event, 'Registrar')">Registrar Cliente</button>
-                                <button class="tablinks" onclick="openCity(event, 'Alterar')">Alterar Cadastro</button>
-                                <button class="tablinks" onclick="openCity(event, 'Listagem')">Listagem/Exclusão de Clientes</button>
+                                <center><div><button class="tablinks" type="button" data-toggle="collapse" data-target="#collapseRegister" aria-expanded="false" aria-controls="collapseExample">Exibir Cadastro de Clientes</button></div></center>
                             </div>
-                            <div id="Registrar" class="tabcontent">
-                                <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                             <div class="collapse" id="collapseRegister">
                                 <form action="Clientes.jsp">
                                     <table>
                                         <tr><td><input class="form-control" type="text" name="nome" placeholder="Nome"></td></tr>
-                                        <tr><td><input class="form-control" type="text" name="cpf" placeholder="CPF"></td></tr>
-                                        <tr><td><input class="form-control" type="text" name="rg" placeholder="RG"></td></tr>
+                                        <tr><td><input class="form-control" type="text" name="cpf" placeholder="Ex.: 000.000.000-00"></td></tr>
+                                        <tr><td><input class="form-control" type="text" name="rg" placeholder="Ex.: 000000000 (Sem pontuação)"></td></tr>
                                         <tr><td><input class="form-control" type="text" name="email" placeholder="E-mail"></td></tr>
                                         <tr><td><input class="form-control" type="text" name="telefone" placeholder="Telefone"></td></tr>
                                         <tr><td><input class="form-control" type="text" name="endereco" placeholder="Endereço"></td></tr>
@@ -41,23 +44,13 @@
                                     <br><input class="bttbody btn btn-primary" type="submit" name="add" value="Confirmar Registro">
                                 </form>
                             </div>
-                            <div id="Alterar" class="tabcontent">
-                                <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-                                <form action="Clientes.jsp">
-                                    <table>
-                                        <tr><td><input class="form-control" type="text" name="indice" placeholder="Índice"></td></tr
-                                        <tr><td><input class="form-control" type="text" name="nome" placeholder="Nome"></td></tr>
-                                        <tr><td><input class="form-control" type="text" name="cpf" placeholder="CPF"></td></tr>
-                                        <tr><td><input class="form-control" type="text" name="rg" placeholder="RG"></td></tr>
-                                        <tr><td><input class="form-control" type="text" name="email" placeholder="E-mail"></td></tr>
-                                        <tr><td><input class="form-control" type="text" name="telefone" placeholder="Telefone"></td></tr>
-                                        <tr><td><input class="form-control" type="text" name="endereco" placeholder="Endereço"></td></tr>
-                                    </table>
-                                    <br><input class="bttbody btn btn-primary" type="submit" name="alt" value="Confirmar Alteração">
-                                </form>
+<!-- FIM FORMULARIO DE CADASTRO DO CLIENTE -->
+<!-- LISTAGEM/ALTERAÇÃO/EXCLUSÃO DO CADASTRO DE CLIENTE -->
+                            <div class="tab">
+                                        <center><div><button class="tablinks" type="button" data-toggle="collapse" data-target="#collapseList" aria-expanded="false" aria-controls="collapseExample">Exibir Alteração/Listagem/Exclusão</button></div></center>
                             </div>
-                            <div id="Listagem" class="tabcontent">
-                                <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+<!-- CABEÇALHO DA LISTAGEM/ALTERAÇÃO/EXCLUSÃO -->
+                             <div class="collapse" id="collapseList">
                                 <table border="1"  class="table">
                                     <thead class=\"thead-dark\">
                                     <tr>
@@ -69,45 +62,61 @@
                                         <th scope="col"><center>Telefone</center></th>
                                         <th scope="col"><center>Endereço</center></th>
                                         <th scope="col"><center>Opção 1</center></th>
+                                        <th scope="col"><center>Opçao 2</center></th>
                                     </tr>
                                     </thead>
+<!-- FIM CABEÇALHO DA LISTAGEM/ALTERAÇÃO/EXCLUSÃO -->
+<!-- SE A OPÇÃO 'alterar' for igual == a 'null' ELE ENTRA EM UM LAÇO BASICO PARA EXIBIÇÃO DOS CADASTROS -->  
+                                    <%if(request.getParameter("alterar") == null) {%>
                                     <%for (int i = 0; i < Bd.getClientes().size(); i++) {%>
                                     <tr>
                                         <td align="center"><%= i %></td>
-                                        <td align="center"><%= Bd.getClientes().get(i).getNome() %></td>
-                                        <td align="center"><%= Bd.getClientes().get(i).getCpf() %></td>
-                                        <td align="center"><%= Bd.getClientes().get(i).getRg() %></td>
-                                        <td align="center"><%= Bd.getClientes().get(i).getEmail() %></td>
-                                        <td align="center"><%= Bd.getClientes().get(i).getTelefone() %></td>
-                                        <td align="center"><%= Bd.getClientes().get(i).getEndereco() %></td>
-                                        <td align="center">
+                                            <td align="center"><%= Bd.getClientes().get(i).getNome() %></td>
+                                            <td align="center"><%= Bd.getClientes().get(i).getCpf() %></td>
+                                            <td align="center"><%= Bd.getClientes().get(i).getRg() %></td>
+                                            <td align="center"><%= Bd.getClientes().get(i).getEmail() %></td>
+                                            <td align="center"><%= Bd.getClientes().get(i).getTelefone() %></td>
+                                            <td align="center"><%= Bd.getClientes().get(i).getEndereco() %></td>
+                                            <td align="center">
                                             <form>
                                                 <input type="hidden" name="i" value="<%= i %>"/>
                                                 <input type="submit" name="del" value="Excluir"/>
                                             </form>
                                         </td>
+                                            <td align="center">
+                                            <form>
+                                                <input type="hidden" name="i" value="<%= i %>"/>
+                                                <input type="submit" name="alterar" value="Alterar"/>
+                                            </form>
+                                        </td>
                                     </tr>
+<!-- FIM PRIMEIRO LAÇO (IF) -->
+<!-- SE A OPÇÃO 'alterar' for diferente != a 'null' ELE ENTRA EM UM LAÇO ELSE PARA EXIBIÇÃO DOS CADASTRO QUE DESEJA ALTERAR
+     COM A AJUDA DO FOR QUE DECLARA A VARIAVEL 'i' PARA REALIZAR A ALTERAÇÃO, EXIBINDO APENAS O CADASTRO QUE DESEJAMOS ALTERAR
+-->  
+                                    <%}} else {%>
+                                            <%for (int i = 0; i < Bd.getClientes().size(); i++){%>
+                                                <%if(i == Integer.parseInt(request.getParameter("i"))){%>
+                                                        <tr>
+                                                            <form>
+                                                            <td><%=i%></td>
+                                                            <td><input type="text" name="nome" value="<%= Bd.getClientes().get(i).getNome() %>"></td>
+                                                            <td><input type="text" name="cpf" value="<%= Bd.getClientes().get(i).getCpf() %>"></td>
+                                                            <td><input type="text" name="rg" value="<%= Bd.getClientes().get(i).getRg() %>"></td>
+                                                            <td><input type="text" name="email" value="<%= Bd.getClientes().get(i).getEmail() %>"></td>
+                                                            <td><input type="text" name="telefone" value="<%= Bd.getClientes().get(i).getTelefone() %>"></td>
+                                                            <td><input type="text" name="endereco" value="<%= Bd.getClientes().get(i).getEndereco() %>"></td>
+                                                            <input type="hidden" name="indice" value="<%=i%>"/>
+                                                            <td><input type="submit" name="salvar" value="Salvar"</td>
+                                                            </form>
+                                                        </tr>
+                                                <%}%>
+                                        <%}%>
                                     <%}%>
+<!-- FIM SEGUNDO LAÇO (ELSE) -->
                                 </table>
                             </div>
-            <script>
-                function openCity(evt, cityName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
-                }
-
-                // Get the element with id="defaultOpen" and click on it
-                document.getElementById("defaultOpen").click();
-            </script>
+<!-- FIM LISTAGEM/ALTERAÇÃO/EXCLUSÃO DO CADASTRO DE CLIENTE -->
                         </div>
                         </div>
                     </div>
