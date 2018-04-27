@@ -20,21 +20,28 @@
 </div>
   
   <center><div class="container-fluid bg-grey">
+          
   <h2>PARA QUEM O REGISTER FOI FEITO?</h2>
+  
   <h4><p>O Register foi criado para resolver problemas de cadastro e</p> <p> ajudar empreendedores, gestores e vendedores a serem mais eficientes nas vendas.</p></h4>
+  
   <h4><p>Veja como:</p></h4>
+  
   <br>
+  
   <div class="row">
     <div class="col-sm-4">
       <img src="Imagens/motivos-1.png">
       <h4>Retorno aos clientes.</h4>
       <p></p>
     </div>
+      
     <div class="col-sm-4">
       <img src="Imagens/motivos-2.png">
       <h4>Acompanhar as vendas em andamento.</h4>
       <p></p>
     </div>
+      
     <div class="col-sm-4">
        <img src="Imagens/motivos-3.png">
       <h4>Comunicação e organização.</h4>
@@ -43,10 +50,11 @@
     </div>
   
         </div> </center>  
+    
     <!-- Container (Desenvolvedores) -->
 
 <div class="container-fluid text-center">
-  <h2>Conheça nosso Desenvolvedores!</h2><br>
+  <h2>Conheça nossos Desenvolvedores!</h2><br>
  
    <div class="row text-center slideanim">
     <div class="col-sm-4">
